@@ -9,7 +9,7 @@ using the fonts as webfonts.
     :license: BSD, see LICENSE for more details.
 """
 
-from .views import (WebfontsApiView, WebfontsListView,
+from views import (WebfontsApiView, WebfontsListView,
                     WebfontsPreviewTextView, WebfontsGalleryView)
 from flask import Blueprint
 from text import text
