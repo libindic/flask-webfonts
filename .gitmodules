@@ -3,4 +3,4 @@
 	url = git://github.com/mitsuhiko/flask-sphinx-themes.git
 [submodule "flaskext/static/jquery.webfonts"]
 	path = flaskext/static/jquery.webfonts
-	url = git@github.com:santhoshtr/jquery.webfonts.git
+	url = git://github.com/santhoshtr/jquery.webfonts.git
