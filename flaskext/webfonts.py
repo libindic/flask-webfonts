@@ -9,21 +9,23 @@ using the fonts as webfonts.
     :license: BSD, see LICENSE for more details.
 """
 
-from .views import (WebfontsApiView, WebfontsListView,
-                    WebfontsPreviewTextView, WebfontsGalleryView)
+from . views import (WebfontsApiView, WebfontsListView,
+                     WebfontsPreviewTextView, WebfontsGalleryView)
 from flask import Blueprint
-from text import text
+from . text import text
 import os.path
 import yaml
 import sys
 
 
 class Webfonts(object):
+
     """
     This class makes flask application serve webfonts from a specified url or
     subdomain. It also comes with an optional interface for showcasing
     webfonts. It supports multiple lamguages.
     """
+
     def __init__(
             self,
             app=None,
@@ -69,7 +71,7 @@ class Webfonts(object):
 
     def init_app(self, app):
 
-        #register the api blueprint
+        # register the api blueprint
         app.register_blueprint(self.blueprint,
                                static_folder=self.font_folder,
                                template_folder='templates',
@@ -82,7 +84,7 @@ class Webfonts(object):
                                     template_folder='templates')
         self.gallery_bp.add_url_rule('/gallery',
                                      view_func=WebfontsGalleryView.as_view(
-                                        'webfonts_gallery'))
+                                         'webfonts_gallery'))
         self.app.register_blueprint(self.gallery_bp,
                                     url_prefix=self.url_prefix)
 
