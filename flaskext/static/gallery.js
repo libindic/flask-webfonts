@@ -5,7 +5,7 @@
          font_details = d.result;
          var repo = {
              repository: {
-                 base: "{{url_for(\"bp_api_webfonts.static \",filename=\"\")}}",
+                 base: static_url,
                  fonts: font_details
              }
          };
@@ -42,9 +42,9 @@
              interface += ' <div id="pane4' + fontname + '" class="tab-pane">';
              interface += ' <h4>To use this font</h4>';
              interface += 'add this to the head of your html file';
-             interface += '<pre>&lt;link href="{{url_for(\'bp_api_webfonts.webfonts_api \',_external=True)}}?font=' + fontname + '" type="stylesheet"/&gt;></pre>';
+             interface += '<pre>&lt;link href='+api_url+'?font="' + fontname +'" type=\"stylesheet\"/&gt;></pre>';
              interface += 'Or you can also use css imports by adding this to your file';
-             interface += '<pre> @import("{{url_for(\'bp_api_webfonts.webfonts_api \',_external=True)}}?font=' + fontname + '")</pre>';
+             interface += '<pre> @import('+api_url+'?font="' + fontname +'")</pre>';
              interface += '<pre>';
              interface += '&lt;style&gt;\n';
              interface += 'body { \n';
